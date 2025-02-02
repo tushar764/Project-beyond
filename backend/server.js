@@ -6,15 +6,14 @@ const authRoutes = require("./Routes/auth");
 const cors = require("cors");
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 app.use(cors({
-  origin: "https://deploy-mern-1whq.vercel.app",  
-  methods: ["POST", "GET"],                    
-  credentials: true                           
+  origin: "https://deploy-mern-1whq.vercel.app",  // Correct URL without trailing dot
+  methods: ["POST", "GET"],
+  credentials: true
 }));
-
-const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 connectToMongo();
@@ -23,6 +22,11 @@ connectToMongo();
 app.use(bodyParser.json());
 app.use(express.json());
 
+// Default route
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend API!");
+});
+
 // Authentication routes
 app.use("/api/auth", authRoutes);
 
@@ -30,4 +34,3 @@ app.use("/api/auth", authRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
