@@ -59,7 +59,7 @@ const Login = (props) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/verifyemail", {
+      const response = await fetch("https://project-beyond-back.vercel.app/api/auth/verifyemail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
