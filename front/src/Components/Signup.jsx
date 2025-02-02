@@ -7,7 +7,7 @@ const Signup = (props) => {
   const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
 
   // Your clientId for Google OAuth
-  const clientId = "210272328636-a4p3fqumdj2lp8ls6832eqt2nd47q41g.apps.googleusercontent.com";
+  const clientId = "129918661046-d2clhgd3f911q94n9l3pr10cjf545bpv.apps.googleusercontent.com";
   const navigate = useNavigate();
 
   // Handle form submission
