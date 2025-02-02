@@ -9,7 +9,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: "https://project-beyond.vercel.app",  
+  origin: "https://deploy-mern-1whq.vercel.app",  
   methods: ["POST", "GET"],                    
   credentials: true                           
 }));
