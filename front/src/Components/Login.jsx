@@ -10,7 +10,7 @@ const Login = (props) => {
   const navigate = useNavigate();
 
   const clientId =
-    "210272328636-a4p3fqumdj2lp8ls6832eqt2nd47q41g.apps.googleusercontent.com";
+    "129918661046-d2clhgd3f911q94n9l3pr10cjf545bpv.apps.googleusercontent.com";
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
