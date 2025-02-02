@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 app.use(cors({
-  origin: "https://deploy-mern-1whq.vercel.app",  // Correct URL without trailing dot
+  origin: "https://project-beyond.vercel.app",  // Corrected URL without trailing slash
   methods: ["POST", "GET"],
   credentials: true
 }));
