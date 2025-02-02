@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import Navbar from "./Navbar"; // Import Navbar
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
 
+  // Your clientId for Google OAuth
   const clientId = "210272328636-a4p3fqumdj2lp8ls6832eqt2nd47q41g.apps.googleusercontent.com";
   const navigate = useNavigate();
 
@@ -15,24 +16,33 @@ const Signup = (props) => {
 
     const { name, email, password } = credentials;
 
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, password })
-    });
+    // API URL for your project beyond back end
+    const apiUrl = "https://project-beyond-back.vercel.app/api/auth/createuser"; 
 
-    const json = await response.json();
-    console.log(json);
-    if (json.success) {
-      // Store token in localStorage
-      localStorage.setItem('token', json.authtoken);
-      // Redirect to login page after successful registration
-      navigate("/login");
-      props.showAlert("Account Created successfully. Please login.", "success");
-    } else {
-      props.showAlert("Invalid credentials", "danger");
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const json = await response.json();
+      console.log(json);
+
+      if (json.success) {
+        // Store token in localStorage after successful user creation
+        localStorage.setItem('token', json.authtoken);
+        // Redirect to login page after successful registration
+        navigate("/login");
+        props.showAlert("Account Created successfully. Please login.", "success");
+      } else {
+        props.showAlert("Invalid credentials", "danger");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      props.showAlert("An error occurred. Please try again.", "danger");
     }
   };
 
