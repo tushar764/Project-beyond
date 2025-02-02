@@ -1,0 +1,489 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.navbar {
+  background-color: #005c97;
+  padding: 1rem;
+  color: #fff;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #005c97;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: #009688;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #00796b;
+}
+
+/* Steps Section */
+.steps {
+  background-color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.steps h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.step {
+  width: 30%;
+  background-color: #e0f2f1;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.step p {
+  font-size: 1rem;
+}
+
+/* Chatbot Section */
+.chatbot {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.chatbot h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chatbot-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-btn:hover {
+  background-color: #388e3c;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Form Styling */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #005c97;
+  box-shadow: 0 0 5px rgba(0, 92, 151, 0.5);
+}
+
+.btn {
+  background-color: #005c97;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004b7a;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.btn-link {
+  background: none;
+  color: #005c97;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+table tbody tr td button {
+  background-color: #00796b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr td button:hover {
+  background-color: #004d40;
+}
+
+/* Training Progress */
+.bg-gray-200 {
+  background-color: #f3f4f6;
+}
+
+.bg-blue-500 {
+  background-color: #1e88e5;
+}
+
+.bg-green-500 {
+  background-color: #43a047;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.max-w-4xl {
+  max-width: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar-nav ul {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cta-btn {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .chatbot-btn {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+}
+
+/* Center the entire container */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 15px;
+  text-align: center;
+}
+
+/* Create an Account Heading */
+.signup-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #005c97;
+  margin-bottom: 20px;
+}
+
+/* Center the form */
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Already have an account? */
+.already-account-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Styling for the 'Login here' button */
+.btn-link {
+  background: none;
+  color: #005c97;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.login-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* General styles for the login page */
+.login-header {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.verify-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.verify-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:enabled {
+  background-color: #218838;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 0.375rem;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Styles for the h1 create account header */
+.create-account-header {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .create-account-header {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+}
