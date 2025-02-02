@@ -42,7 +42,7 @@ router.post('/createuser',
       });
 
       // Delay verification code sending by 3 seconds
-      await delay(3000); // Delay for 3 seconds
+      await delay(1000); // Delay for 3 seconds
 
       // After delay, send the verification code
       await SendVerificationCode(user.email, user.verificationCode);
@@ -92,7 +92,7 @@ router.post('/login',
         await user.save();
         
         // Delay verification code sending by 3 seconds
-        await delay(3000); // Delay for 3 seconds
+        await delay(1000); // Delay for 3 seconds
 
         // Send new code after delay
         await SendVerificationCode(user.email, user.verificationCode);
