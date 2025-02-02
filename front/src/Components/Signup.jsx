@@ -5,10 +5,11 @@ import Navbar from "./Navbar"; // Import Navbar
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
+  const [loading, setLoading] = useState(false); // Loading state
+  const navigate = useNavigate();
 
   // Your clientId for Google OAuth
   const clientId = "129918661046-d2clhgd3f911q94n9l3pr10cjf545bpv.apps.googleusercontent.com";
-  const navigate = useNavigate();
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -16,8 +17,11 @@ const Signup = (props) => {
 
     const { name, email, password } = credentials;
 
+    // Set loading to true to indicate the process is ongoing
+    setLoading(true);
+
     // API URL for your project beyond back end
-    const apiUrl = "https://project-beyond-back.vercel.app/api/auth/createuser"; 
+    const apiUrl = "https://project-beyond-back.vercel.app/api/auth/createuser";
 
     try {
       const response = await fetch(apiUrl, {
@@ -43,6 +47,9 @@ const Signup = (props) => {
     } catch (error) {
       console.error("Error during fetch:", error);
       props.showAlert("An error occurred. Please try again.", "danger");
+    } finally {
+      // Set loading to false once the process is complete
+      setLoading(false);
     }
   };
 
@@ -94,11 +101,16 @@ const Signup = (props) => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary" style={{ marginTop: "20px" }}>Submit</button>
+          <button type="submit" className="btn btn-primary" style={{ marginTop: "20px" }} disabled={loading}>
+            {loading ? "Please wait..." : "Submit"}
+          </button>
           <p style={{ marginTop: "15px" }}>
             Already have an account? <Link to="/login">Login here</Link>
           </p>
         </form>
+
+        {/* Show loading indicator if the form is submitting */}
+        {loading && <div className="loading-indicator">Processing your request...</div>}
       </div>
     </GoogleOAuthProvider>
   );
