@@ -8,6 +8,9 @@ const { SendVerificationCode, WelcomeEmail } = require("../Middleware/email");
 const router = express.Router();
 const JWT_SECRET = "your_jwt_secret_key_here"; // Secure this with environment variables
 
+// Function to simulate a delay before sending the verification code
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 // Route 1: Register a new user
 router.post('/createuser',
   [
@@ -38,7 +41,11 @@ router.post('/createuser',
         verificationCode: Math.floor(1000000 + Math.random() * 900000).toString(),
       });
 
-      SendVerificationCode(user.email, user.verificationCode);
+      // Delay verification code sending by 3 seconds
+      await delay(3000); // Delay for 3 seconds
+
+      // After delay, send the verification code
+      await SendVerificationCode(user.email, user.verificationCode);
 
       const data = {
         user: { id: user.id },
@@ -83,7 +90,13 @@ router.post('/login',
       if (!user.isVerified) {
         user.verificationCode = Math.floor(1000000 + Math.random() * 900000).toString();
         await user.save();
-        SendVerificationCode(user.email, user.verificationCode); // Send new code
+        
+        // Delay verification code sending by 3 seconds
+        await delay(3000); // Delay for 3 seconds
+
+        // Send new code after delay
+        await SendVerificationCode(user.email, user.verificationCode);
+
         return res.status(400).json({
           success: false,
           error: "Your email is not verified. Please check your inbox for the new verification code.",
